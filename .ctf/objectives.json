@@ -1,0 +1,71 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Get the flag",
+      "prompt": "Sign the server's nonce with its private key and receive the flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2023-cursved}",
+      "hints": [
+        "Is the curve really an elliptic curve? Look at the group it defines.",
+        "Map the group into a structure where discrete logarithms are easier, then check the order."
+      ],
+      "steps": [
+        {
+          "key": "scheme",
+          "title": "Identify the scheme",
+          "prompt": "Which signature scheme does the server implement? (name)",
+          "check": {
+            "answer": [
+              "schnorr",
+              "schnorr signature",
+              "schnorr signatures"
+            ]
+          }
+        },
+        {
+          "key": "curve",
+          "title": "Identify the curve",
+          "prompt": "What kind of curve defines the group? (name)",
+          "check": {
+            "answer": [
+              "pell conic",
+              "pell",
+              "pell curve",
+              "pell equation",
+              "conic"
+            ]
+          }
+        },
+        {
+          "key": "problem",
+          "title": "Name the hard problem",
+          "prompt": "Which hard problem protects the private key? (acronym)",
+          "check": {
+            "answer": [
+              "dlp",
+              "discrete logarithm",
+              "discrete log",
+              "discrete logarithm problem"
+            ]
+          }
+        },
+        {
+          "key": "algorithm",
+          "title": "Name the algorithm",
+          "prompt": "Which algorithm solves it quickly when the group order is smooth?",
+          "check": {
+            "answer": [
+              "pohlig-hellman",
+              "pohlig hellman",
+              "pohlig–hellman"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
