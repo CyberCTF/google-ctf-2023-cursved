@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2023-cursved",
+  "slug": "google-ctf-2023-cursved",
   "title": "Google CTF 2023: Cursved",
   "description": "A new signature scheme over a curve: the server gives its public key and a nonce, and asks for a signature.",
-  "question": "Recover the server's private key, sign its nonce and get the flag.",
-  "category": "CRYPTO",
+  "category": "crypto",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Recover the server's private key, sign its nonce and get the flag."
 }
